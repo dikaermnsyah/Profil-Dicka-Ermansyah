@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Website profil dan portofolio m.DICKA.ERMANSYAH">
+  <title>m.DICKA.ERMANSYAH — Profil & Portofolio</title>
+  <style>
+    :root{
+      --bg:#070b14; --panel:rgba(15,23,42,.72); --text:#f8fafc;
+      --muted:#a7b0c2; --line:rgba(255,255,255,.10);
+      --accent:#60a5fa; --accent2:#a78bfa; --max:1120px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text); background:
+      radial-gradient(circle at 15% 10%,rgba(96,165,250,.16),transparent 32rem),
+      radial-gradient(circle at 85% 20%,rgba(167,139,250,.12),transparent 30rem),
+      var(--bg); line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(92%,var(--max));margin:auto}
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(18px);
+      background:rgba(7,11,20,.72);border-bottom:1px solid var(--line)
+    }
+    nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.08em}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:.92rem}
+    .navlinks a:hover{color:#fff}
+    .hero{min-height:calc(100vh - 64px);display:grid;place-items:center;padding:72px 0}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+    .eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.95;letter-spacing:-.06em;margin:16px 0 22px}
+    h1 span{background:linear-gradient(90deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(1rem,2vw,1.18rem);color:var(--muted);max-width:680px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-weight:800;transition:.2s}
+    .btn.primary{background:#fff;color:#07101e;border-color:#fff}
+    .btn:hover{transform:translateY(-2px)}
+    .photo-wrap{position:relative;max-width:390px;margin:auto}
+    .photo-wrap::before{
+      content:"";position:absolute;inset:-18px;border:1px solid rgba(96,165,250,.3);
+      border-radius:34px;transform:rotate(5deg)
+    }
+    .photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;
+      display:block;border-radius:30px;border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 30px 90px rgba(0,0,0,.5);position:relative;z-index:1}
+    .badge{position:absolute;z-index:2;bottom:18px;left:-20px;background:rgba(7,11,20,.88);
+      border:1px solid var(--line);padding:11px 15px;border-radius:16px;font-size:.85rem;backdrop-filter:blur(12px)}
+    section{padding:92px 0}
+    .section-head{max-width:700px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:8px 0 12px}
+    .section-head p,.muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 16px 60px rgba(0,0,0,.16)}
+    .card h3{margin-bottom:7px}.card p{color:var(--muted)}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+    .fact{padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}
+    .fact b{display:block;margin-bottom:4px}.fact span{color:var(--muted);font-size:.92rem}
+    .skills{display:grid;gap:16px}
+    .skill-row{display:grid;gap:7px}
+    .skill-top{display:flex;justify-content:space-between;gap:10px;font-size:.9rem}
+    .skill-top span{color:var(--muted)}
+    .bar{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+    .bar i{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+    .timeline{display:grid;gap:18px}
+    .item{position:relative;padding:4px 0 4px 28px;border-left:1px solid rgba(255,255,255,.16)}
+    .item::before{content:"";position:absolute;left:-6px;top:12px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(96,165,250,.1)}
+    .item small{color:var(--accent);font-weight:800}.item h3{margin:5px 0}.item p{color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+    .contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#fff;border-radius:15px;padding:13px 15px;outline:none;font:inherit}
+    input:focus,textarea:focus{border-color:rgba(96,165,250,.7)}
+    textarea{min-height:150px;resize:vertical}
+    @media (max-width:800px){
+      .navlinks{display:none}
+      .hero{padding:54px 0}.hero-grid,.contact{grid-template-columns:1fr;gap:42px}
+      .hero-copy{order:1}.photo-wrap{order:0;width:min(82vw,350px)}
+      .grid{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr}
+      section{padding:70px 0}
+    }
+    @media (max-width:520px){
+      .container{width:min(91%,var(--max))}
+      .grid{grid-template-columns:1fr}
+      h1{font-size:3.1rem}
+      .actions .btn{width:100%}
+      .photo-wrap{width:min(88vw,330px)}
+      .badge{left:8px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">m.<span>DICKA</span></a>
+      <div class="navlinks">
+        <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#journey">Perjalanan</a><a href="#contact">Kontak</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Profil & Portofolio</div>
+      <h1>m.DICKA.<span>ERMANSYAH</span></h1>
+      <p class="lead">Pelajar aktif di SMK Negeri 1 Bangkinang yang bersemangat mempelajari pengembangan web modern, desain antarmuka pengguna, dan teknologi digital kreatif.</p>
+      <div class="actions">
+        <a class="btn primary" href="#about">Kenal Saya</a>
+        <a class="btn" href="#contact">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <img class="photo" src="foto-profil.jpg" alt="Foto profil m.DICKA.ERMANSYAH">
+      <div class="badge">👋 Halo, selamat datang!</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Profil Singkat</div>
+      <h2>Tentang Saya</h2>
+      <p>Mengenal lebih dekat latar belakang, semangat belajar, dan tujuan saya.</p>
+    </div>
+    <div class="card">
+      <p>Halo! Saya <b>m.DICKA.ERMANSYAH</b>, seorang pelajar yang memiliki rasa ingin tahu tinggi dan ketertarikan pada dunia teknologi informasi serta pengembangan web.</p>
+      <p style="margin-top:12px">Menempuh pendidikan di <b>SMK Negeri 1 Bangkinang</b> memberikan saya pengalaman praktik yang berharga, melatih kedisiplinan, serta mengajarkan cara membangun karya digital yang bermanfaat.</p>
+      <div class="facts">
+        <div class="fact"><b>📍 Lokasi</b><span>Bangkinang, Kampar, Riau</span></div>
+        <div class="fact"><b>🎓 Pendidikan</b><span>SMK Negeri 1 Bangkinang</span></div>
+        <div class="fact"><b>💻 Minat</b><span>Web Development & UI/UX</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Kompetensi</div>
+      <h2>Keahlian & Teknologi</h2>
+      <p>Kemampuan teknis yang terus saya pelajari dan kembangkan.</p>
+    </div>
+    <div class="card skills">
+      <div class="skill-row"><div class="skill-top"><b>HTML5 & Struktur Semantik</b><span>92%</span></div><div class="bar"><i style="--w:92%"></i></div></div>
+      <div class="skill-row"><div class="skill-top"><b>CSS3, Flexbox & Grid</b><span>88%</span></div><div class="bar"><i style="--w:88%"></i></div></div>
+      <div class="skill-row"><div class="skill-top"><b>JavaScript (DOM & ES6+)</b><span>82%</span></div><div class="bar"><i style="--w:82%"></i></div></div>
+      <div class="skill-row"><div class="skill-top"><b>Desain UI/UX & Responsif</b><span>86%</span></div><div class="bar"><i style="--w:86%"></i></div></div>
+      <div class="skill-row"><div class="skill-top"><b>Jaringan Dasar & Hardware</b><span>80%</span></div><div class="bar"><i style="--w:80%"></i></div></div>
+      <div class="skill-row"><div class="skill-top"><b>Git & Manajemen Proyek</b><span>76%</span></div><div class="bar"><i style="--w:76%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Perjalanan</div>
+      <h2>Pendidikan & Pengalaman</h2>
+      <p>Jejak langkah akademik dan proses belajar saya.</p>
+    </div>
+    <div class="timeline">
+      <article class="item"><small>SEKARANG — AKTIF</small><h3>Siswa Kejuruan Teknologi</h3><p><b>SMK Negeri 1 Bangkinang</b> — Mendalami praktik pemrograman web, perakitan serta konfigurasi sistem komputer, dan kolaborasi proyek praktik kejuruan.</p></article>
+      <article class="item"><small>PROYEK MANDIRI</small><h3>Pengembang Web Portofolio & Aplikasi Mini</h3><p><b>Bangkinang, Riau</b> — Merancang antarmuka website interaktif berbasis HTML, CSS, dan JavaScript dengan fokus pada kecepatan, responsivitas, dan estetika.</p></article>
+      <article class="item"><small>PENDIDIKAN MENENGAH PERTAMA</small><h3>Lulusan SMP</h3><p><b>Bangkinang, Kabupaten Kampar</b> — Menyelesaikan pendidikan tingkat pertama dan mulai menemukan ketertarikan pada komputer serta logika pemrograman.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Terhubung</div>
+      <h2>Hubungi Saya</h2>
+      <p>Punya pertanyaan, saran, atau ingin berkolaborasi? Silakan kirim pesan.</p>
+    </div>
+    <div class="contact">
+      <div class="card">
+        <h3>Mari Berkenalan!</h3>
+        <p class="muted" style="margin-top:8px">Saya terbuka untuk diskusi seputar pemrograman web, tugas sekolah, maupun proyek kreatif bersama teman-teman.</p>
+        <div class="facts">
+          <div class="fact"><b>Nama</b><span>m.DICKA.ERMANSYAH</span></div>
+          <div class="fact"><b>Sekolah</b><span>SMK Negeri 1 Bangkinang</span></div>
+          <div class="fact"><b>Domisili</b><span>Bangkinang, Riau</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <form onsubmit="event.preventDefault(); alert('Terima kasih! Form demo ini siap dihubungkan ke layanan email/backend.');">
+          <input required minlength="2" placeholder="Nama Anda">
+          <input required type="email" placeholder="nama@email.com">
+          <textarea required minlength="10" placeholder="Tulis pesan Anda..."></textarea>
+          <button class="btn primary" type="submit">Kirim Pesan Sekarang</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> m.DICKA.ERMANSYAH — SMK Negeri 1 Bangkinang.</div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
